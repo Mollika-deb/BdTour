@@ -1,0 +1,643 @@
+@import url("https://fonts.googleapis.com/css2?family=Lisu+Bosa:wght@600;800&family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+  --primary-color: #0a0d14;
+  --primary-color-light: #20242f;
+  --secondary-color: #f49e09;
+  --extra-light: rgba(255, 255, 255, 0.5);
+  --white: #ffffff;
+  --max-width: 1200px;
+  --header-font: "Lisu Bosa", serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.section__container {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 5rem 1rem;
+}
+
+.section__header {
+  margin-bottom: 2rem;
+  font-size: 3rem;
+  font-weight: 800;
+  font-family: var(--header-font);
+  text-align: center;
+}
+
+.section__subheader {
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+  cursor: pointer;
+}
+
+img {
+  width: 100%;
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: var(--white);
+  background-color: var(--primary-color);
+}
+
+header {
+  background-image: linear-gradient(to right, var(--primary-color), transparent),
+    url("assets/banner.png");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+nav {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid var(--extra-light);
+}
+
+.nav__bar {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 1.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.nav__logo a {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color:rgb(241, 84, 110)
+}
+
+.nav__links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.link a {
+  padding: 1.5rem 5px;
+  font-weight: 500;
+  color: var(--secondary-color);
+  transition: 0.3s;
+}
+
+.link a:hover {
+  color: var(--secondary-color);
+  border-bottom: 2px solid var(--secondary-color);
+}
+
+.link span {
+  padding: 1rem 0;
+  color: var(--white);
+  cursor: pointer;
+}
+
+.header__container {
+  padding: 12rem 1rem;
+}
+
+.header__container h3 {
+  margin-bottom: 1rem;
+  max-width: 700px;
+  font-size: 3rem;
+  font-family: var(--header-font);
+}
+.header__container span {
+  color: var(--secondary-color);
+}
+
+.header__container h4 {
+  position: relative;
+  margin-left: 3rem;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.header__container h4::after {
+  position: absolute;
+  content: "";
+  left: -3rem;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 2px;
+  width: 2rem;
+  background-color: var(--white);
+}
+
+
+.discover {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.05),
+    transparent
+  );
+}
+.discover__container h2{
+color: var(--secondary-color);
+letter-spacing: 2px;
+
+margin: 0 auto;
+text-align: center;
+
+}
+.discover__container p{
+  padding-bottom: 15px;
+  padding-top: 15px;
+  border-bottom: 2px dashed #f49e09;
+  width: fit-content;
+}
+
+.discover__grid {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.discover__card {
+  max-width: 320px;
+  margin: auto;
+  height: 100%
+}
+
+.discover__card:nth-child(2) {
+  transform: translateY(0);
+}
+
+.discover__image {
+  position: relative;
+  width: 100%;
+  height: 400px; /* Set a fixed height for the container */
+  overflow: hidden; /* Ensures no image exceeds this height */
+  position: relative;
+}
+.discover__image img {
+  width: 100%; /* Ensure the image fits the width */
+  height: 100%; /* Ensure the image fills the height */
+  object-fit: cover; /* Crops the image to maintain aspect ratio */
+  display: block; /* Removes extra bottom spacing from inline elements */
+}
+
+.discover__image::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 50%;
+  left: 0;
+  bottom: 0;
+  background-image: linear-gradient(to top, var(--primary-color), transparent);
+}
+
+.discover__card__content {
+  padding: 0 2rem;
+  transform: translateY(-50%);
+}
+
+.discover__card__content h4 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 800;
+  font-family: var(--header-font);
+  color: var(--secondary-color);
+}
+
+.discover__card__content p {
+  margin-bottom: 2rem;
+}
+.discover__card__content span {
+  color:rgb(241, 84, 110);
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.discover__btn {
+  padding: 0.75rem 1rem;
+  outline: none;
+  font-size: 1rem;
+  color: var(--white);
+  background-color: transparent;
+  border: 1px solid var(--white);
+  cursor: pointer;
+}
+
+/* Destionation section end..................... */
+
+/* .blogs__container {
+  padding: 5rem 0;
+} */
+
+.blogs__container h2{
+  color: var(--secondary-color);
+  letter-spacing: 2px;
+  
+  margin: 0 auto;
+  text-align: center;
+  
+  }
+  .para{
+    padding-bottom: 15px;
+    padding-top: 15px;
+    border-bottom: 2px dashed #f49e09;
+    width: fit-content;
+    font-size: large;
+  }
+
+.blogs__grid {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+  margin-left: 4rem;
+  margin-right: 4rem;
+  animation: none;
+}
+
+.blogs__card {
+  background-color: black; /* Optional: Card background color */
+  border-radius: 8px; /* Optional: Rounded corners for a polished look */
+  overflow: hidden; /* Ensures content stays inside the card */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+  display: flex;
+  flex-direction: column; /* Stack image and content vertically */
+  text-align: left;
+  animation: none;
+}
+
+.blogs__card img {
+  width: 100%; /* Image fills the card width */
+  height: 200px; /* Keeps the aspect ratio of the image */
+  display: block; /* Avoids extra space below images */
+}
+
+.blogs__content {
+  padding: 1.5rem; /* Adds spacing inside the content area */
+  font-size: 1rem; /* Font size for readability */
+  font-weight: 500;
+  color: #ffffffdd; /* Text color */
+  
+  background-color: black; /* Optional: Background color for content */
+  text-align: left; /* Aligns the content to the left */
+  transition: none;
+}
+.blogs__content h3{
+  color: rgb(241, 84, 110);
+ 
+}
+.blogs__content p{
+ font-size: small;
+ opacity: 0.8;
+}
+.blogs__content span a{
+color: #f49e09;
+ opacity: 0.8;
+ border-bottom: 2px solid #f49e09;
+}
+
+
+
+.gallery__container {
+  padding: 5rem 1rem;
+  overflow: hidden;
+}
+
+
+/* galeler.................. */
+
+.gallery__grid {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: 350px repeat(3, 1fr);
+  grid-auto-rows: max-content;
+  gap: 1.5rem;
+  overflow: hidden;
+}
+
+.gallery__card {
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery__card:nth-child(1) {
+  grid-area: 1/1/3/2;
+}
+
+.gallery__card:nth-child(2) {
+  grid-area: 1/2/2/4;
+}
+
+.gallery__card img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+
+.gallery__details {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.6); /* Optional: darken the bottom part for text readability */
+}
+
+.gallery__details h4 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--white);
+}
+
+.gallery__details p {
+  font-size: 0.9rem;
+  color: var(--white);
+}
+
+/* Responsive CSS for smaller screens */
+@media screen and (max-width: 768px) {
+  .gallery__grid {
+    grid-template-columns: repeat(2, 1fr); /* Two columns layout */
+    gap: 1rem;
+  }
+
+  .gallery__card:nth-child(1) {
+    grid-area: auto;
+  }
+
+  .gallery__card:nth-child(2) {
+    grid-area: auto;
+  }
+
+  .gallery__card img {
+    height: 250px; /* Fix image height for small screens */
+  }
+
+  .gallery__details {
+    padding: 1rem;
+  }
+
+  .gallery__details h4 {
+    font-size: 1rem; /* Slightly smaller text */
+  }
+
+  .gallery__details p {
+    font-size: 0.8rem; /* Adjust description font size */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .gallery__grid {
+    grid-template-columns: 1fr; /* One column layout */
+  }
+
+  .gallery__card img {
+    height: 200px; /* Adjust image height for very small screens */
+  }
+
+  .gallery__details {
+    padding: 0.8rem;
+  }
+
+  .gallery__details h4 {
+    font-size: 0.9rem; /* Smaller text for compact layout */
+  }
+
+  .gallery__details p {
+    font-size: 0.75rem; /* Even smaller description font size */
+  }
+}
+
+/* galeler.................. */
+.contact {
+  background-image: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 0.05),
+    transparent
+  );
+}
+
+.contact__container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  align-items: center;
+}
+
+.contact__card {
+  max-width: 250px;
+  margin: auto;
+  aspect-ratio: 1;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  border: 1px solid var(--extra-light);
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.contact__card span {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  transition: 0.3s;
+}
+
+.contact__card:hover span {
+  color: var(--secondary-color);
+}
+
+.contact__col h4 {
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  font-weight: 800;
+  font-family: var(--header-font);
+}
+
+.contact__col h5 {
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-family: var(--header-font);
+}
+
+.footer__container {
+  text-align: center;
+}
+
+.footer__container h4 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.footer__socials {
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.footer__socials span a {
+  font-size: 1.5rem;
+  color: var(--white);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.footer__socials span a:hover {
+  color: var(--secondary-color);
+}
+
+.footer__container p {
+  max-width: 600px;
+  margin: auto;
+  margin-bottom: 2rem;
+}
+
+.footer__nav {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.footer__link a {
+  font-weight: 500;
+  color: var(--white);
+}
+
+.footer__link a:hover {
+  color: var(--secondary-color);
+}
+
+.footer__bar {
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.8rem;
+
+}
+
+@media (width < 900px) {
+  .link:not(.search) {
+    display: none;
+  }
+
+  .about__container {
+    grid-template-columns: repeat(1, 1fr);
+    text-align: center;
+  }
+
+  .about__container :is(.section__header, .section__subheader) {
+    text-align: center;
+  }
+
+  .about__image {
+    grid-area: 1/1/2/2;
+  }
+
+  .discover__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .blogs__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .journals__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .hero__container p {
+    font-size: 10rem;
+  }
+
+  .gallery__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .contact__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact__col:first-child {
+    grid-area: 1/1/2/3;
+    text-align: center;
+  }
+}
+
+@media (width < 600px) {
+  .header__container {
+    text-align: center;
+  }
+
+  .header__container h4 {
+    margin-left: 0;
+  }
+
+  .about__card {
+    border: none;
+  }
+
+  .discover__grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .discover__card:nth-child(2) {
+    transform: translateY(0);
+  }
+
+  .blogs__grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .journals__grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .hero__container p {
+    font-size: 6rem;
+  }
+
+  .gallery__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact__container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .contact__col:first-child {
+    grid-area: unset;
+  }
+}
