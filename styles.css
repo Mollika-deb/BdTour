@@ -72,8 +72,13 @@ header {
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
+ 
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
 }
 
+/* General Navigation Styles */
 nav {
   background-color: rgba(0, 0, 0, 0.5);
   border-bottom: 1px solid var(--extra-light);
@@ -92,7 +97,7 @@ nav {
 .nav__logo a {
   font-size: 1.2rem;
   font-weight: 600;
-  color:rgb(241, 84, 110)
+  color: rgb(241, 84, 110);
 }
 
 .nav__links {
@@ -114,10 +119,23 @@ nav {
   border-bottom: 2px solid var(--secondary-color);
 }
 
-.link span {
-  padding: 1rem 0;
-  color: var(--white);
-  cursor: pointer;
+/* Responsive Styles for Smaller Screens */
+@media (max-width: 768px) {
+  .nav__links {
+    flex-direction: column; /* Change layout to vertical */
+    align-items: flex-start; /* Align links to the left */
+    gap: 1rem; /* Reduce spacing between links */
+    width: 100%; /* Full width for links container */
+  }
+
+  .nav__bar {
+    flex-direction: column; /* Stack logo and links vertically */
+    align-items: flex-start; /* Align everything to the left */
+  }
+
+  .nav__logo {
+    margin-bottom: 1rem; /* Add spacing below the logo */
+  }
 }
 
 .header__container {
@@ -156,7 +174,7 @@ nav {
 
 .discover {
   background-image: linear-gradient(
-    to bottom,
+    to top,
     rgba(255, 255, 255, 0.05),
     transparent
   );
@@ -187,6 +205,9 @@ text-align: center;
   max-width: 320px;
   margin: auto;
   height: 100%
+}
+.discover__card h3{
+  margin: 5px;
 }
 
 .discover__card:nth-child(2) {
@@ -255,80 +276,64 @@ text-align: center;
   padding: 5rem 0;
 } */
 
-.blogs__container h2{
-  color: var(--secondary-color);
-  letter-spacing: 2px;
-  
-  margin: 0 auto;
+.blogs__container {
   text-align: center;
-  
-  }
-  .para{
-    padding-bottom: 15px;
-    padding-top: 15px;
-    border-bottom: 2px dashed #f49e09;
-    width: fit-content;
-    font-size: large;
-  }
-
-.blogs__grid {
   margin-top: 4rem;
+}
+.blogs__container h2 {
+  color: #f49e09;
+}
+.para{
+  border-bottom: 2px dashed #f49e09;
+  width: fit-content;
+}
+.blogs__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 5px;
-  margin-left: 4rem;
-  margin-right: 4rem;
-  animation: none;
+  gap: 1rem;
+  margin: 3rem 2rem;
 }
 
 .blogs__card {
-  background-color: black; /* Optional: Card background color */
-  border-radius: 8px; /* Optional: Rounded corners for a polished look */
-  overflow: hidden; /* Ensures content stays inside the card */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
-  display: flex;
-  flex-direction: column; /* Stack image and content vertically */
+  background-color: #222;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: left;
-  animation: none;
 }
 
 .blogs__card img {
-  width: 100%; /* Image fills the card width */
-  height: 200px; /* Keeps the aspect ratio of the image */
-  display: block; /* Avoids extra space below images */
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
 }
 
 .blogs__content {
-  padding: 1.5rem; /* Adds spacing inside the content area */
-  font-size: 1rem; /* Font size for readability */
-  font-weight: 500;
-  color: #ffffffdd; /* Text color */
-  
-  background-color: black; /* Optional: Background color for content */
-  text-align: left; /* Aligns the content to the left */
-  transition: none;
-}
-.blogs__content h3{
-  color: rgb(241, 84, 110);
- 
-}
-.blogs__content p{
- font-size: small;
- opacity: 0.8;
-}
-.blogs__content span a{
-color: #f49e09;
- opacity: 0.8;
- border-bottom: 2px solid #f49e09;
+  padding: 1.5rem;
+  color: #fff;
 }
 
+.blogs__content h3 {
+  color: #f1546e;
+}
+
+.blogs__content span a {
+  color: #f49e09;
+  text-decoration: none;
+  border-bottom: 2px solid #f49e09;
+}
 
 
 .gallery__container {
   padding: 5rem 1rem;
   overflow: hidden;
 }
-
+.gallery_para{
+  font-size: medium;
+  border-bottom: 2px dashed #f49e09;
+  width: fit-content;
+  
+}
 
 /* galeler.................. */
 
@@ -397,7 +402,7 @@ color: #f49e09;
   }
 
   .gallery__card img {
-    height: 250px; /* Fix image height for small screens */
+    height: 250px; 
   }
 
   .gallery__details {
@@ -487,8 +492,79 @@ color: #f49e09;
   font-family: var(--header-font);
 }
 
+
+/* quiz section................... */
+
+.quiz-container {
+  width: 80%;
+  /* max-width: 600px; */
+  margin: 50px auto;
+
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+
+.quiz-heading{
+color: #f49e09;
+width: fit-content;
+}
+.question-container{
+  margin-top: 4rem;
+ 
+}
+.question-container p{
+  font-size: larger;
+  font-weight: 600;
+  
+  max-width: 600px;
+}
+
+button {
+  background-color: #3498db;
+  color: white;
+  padding: 10px 20px;
+  margin: 10px 0;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.answer-btn {
+  width: 50%;
+  margin: 5px 0;
+  padding: 10px;
+  background-color: #f49e09;
+  opacity: 0.9;
+}
+
+.answer-btn:hover {
+  background-color: #27ae60;
+}
+
+#next-btn {
+  display: none;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #333;
+  color: white;
+}
+
 .footer__container {
   text-align: center;
+  
 }
 
 .footer__container h4 {
@@ -547,23 +623,12 @@ color: #f49e09;
 
 }
 
-@media (width < 900px) {
-  .link:not(.search) {
+ @media (width < 900px) {
+  /* .link:not(.search) {
     display: none;
-  }
+  } */
 
-  .about__container {
-    grid-template-columns: repeat(1, 1fr);
-    text-align: center;
-  }
-
-  .about__container :is(.section__header, .section__subheader) {
-    text-align: center;
-  }
-
-  .about__image {
-    grid-area: 1/1/2/2;
-  }
+ 
 
   .discover__grid {
     grid-template-columns: repeat(2, 1fr);
@@ -573,11 +638,7 @@ color: #f49e09;
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .journals__grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-  }
-
+  
   .hero__container p {
     font-size: 10rem;
   }
@@ -621,9 +682,7 @@ color: #f49e09;
     grid-template-columns: repeat(1, 1fr);
   }
 
-  .journals__grid {
-    grid-template-columns: repeat(1, 1fr);
-  }
+ 
 
   .hero__container p {
     font-size: 6rem;
@@ -640,4 +699,4 @@ color: #f49e09;
   .contact__col:first-child {
     grid-area: unset;
   }
-}
+} 
